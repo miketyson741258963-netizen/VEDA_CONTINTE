@@ -1,0 +1,8 @@
+{
+  "name": "VEDA – Construction & Interiors",
+  "description": "Premium AI-powered business website for luxury construction and interior design services, featuring a conversational Gemini assistant.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
