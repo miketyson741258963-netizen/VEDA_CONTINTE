@@ -5,104 +5,82 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- SEO Primary Meta Tags -->
-    <title>VEDA | Top House Construction & Luxury Interior Designers in Hyderabad, Bangalore</title>
-    <meta name="description" content="VEDA offers premium turnkey house construction and luxury interior design services across Hyderabad, Bangalore, and Chennai. Trusted for quality, transparency, and Vastu-compliant homes." />
-    <meta name="keywords" content="house construction company Hyderabad, interior designers Bangalore, turnkey home construction, luxury villa interiors, VEDA construction, best home interiors Chennai" />
-    <meta name="author" content="VEDA – Construction & Interiors" />
-    <link rel="canonical" href="https://vedadesigns.in" />
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://vedadesigns.in/" />
-    <meta property="og:title" content="VEDA | Building Strong Foundations & Elegant Living Spaces" />
-    <meta property="og:description" content="India's most trusted partner for high-quality house construction and luxury interiors. Transform your dream home with VEDA." />
-    <meta property="og:image" content="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=1200" />
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://vedadesigns.in/" />
-    <meta property="twitter:title" content="VEDA | Premium Construction & Interiors" />
-    <meta property="twitter:description" content="Turnkey house construction and luxury interior design services across South India. Get a free consultation today." />
-    <meta property="twitter:image" content="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=1200" />
-
-    <!-- Structured Data (JSON-LD) for Local Business -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "VEDA – Construction & Interiors",
-      "image": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d",
-      "@id": "https://vedadesigns.in",
-      "url": "https://vedadesigns.in",
-      "telephone": "+919999900000",
-      "priceRange": "₹₹₹",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "101, Luxury Arcade, Jubilee Hills",
-        "addressLocality": "Hyderabad",
-        "addressRegion": "Telangana",
-        "postalCode": "500033",
-        "addressCountry": "IN"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 17.43,
-        "longitude": 78.40
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday"
-        ],
-        "opens": "10:00",
-        "closes": "19:00"
-      },
-      "sameAs": [
-        "https://www.instagram.com/vedadesigns",
-        "https://www.facebook.com/vedadesigns"
-      ]
-    }
-    </script>
+    <title>VEDA | Architectural Construction & Luxury Interior Design Studio</title>
+    <meta name="description" content="VEDA is a premium architectural construction and interior design studio. Bespoke turnkey solutions for luxury homes in Hyderabad and Bangalore." />
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+      :root {
+        --obsidian: #0A0A0A;
+        --gold: #D4AF37;
+        --pearl: #FFFFFF;
+        --soft-gray: #F5F5F7;
+      }
+      * {
+        scrollbar-width: thin;
+        scrollbar-color: var(--gold) transparent;
+      }
       body {
-        font-family: 'Poppins', sans-serif;
-        scroll-behavior: smooth;
-        background-color: #FAFAFA;
-        color: #1F1F1F;
+        font-family: 'Inter', sans-serif;
+        background-color: var(--pearl);
+        color: var(--obsidian);
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
       }
       h1, h2, h3, h4, .font-serif {
         font-family: 'Playfair Display', serif;
       }
-      .glass {
-        background: rgba(255, 255, 255, 0.7);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
+      .glass-nav {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: saturate(180%) blur(15px);
+        -webkit-backdrop-filter: saturate(180%) blur(15px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.03);
       }
-      .accent-glow:hover {
-        box-shadow: 0 0 20px rgba(201, 162, 77, 0.3);
+      .luxury-card {
+        transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
       }
-      .custom-scrollbar::-webkit-scrollbar {
-        width: 6px;
+      .luxury-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 40px 80px -15px rgba(0,0,0,0.1);
       }
-      .custom-scrollbar::-webkit-scrollbar-track {
-        background: transparent;
+      .text-glow {
+        text-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
       }
-      .custom-scrollbar::-webkit-scrollbar-thumb {
-        background: #D6C4A1;
-        border-radius: 10px;
+      .parallax-bg {
+        transition: transform 0.1s ease-out;
       }
+      .btn-premium {
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        transition: color 0.4s ease;
+      }
+      .btn-premium::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background: var(--obsidian);
+        transition: width 0.4s ease;
+        z-index: -1;
+      }
+      .btn-premium:hover::before {
+        width: 100%;
+      }
+      .btn-premium:hover {
+        color: white;
+      }
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+      }
+      .floating { animation: float 4s ease-in-out infinite; }
     </style>
   <script type="importmap">
 {

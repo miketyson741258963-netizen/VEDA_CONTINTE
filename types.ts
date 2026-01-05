@@ -1,7 +1,13 @@
 
+export interface Source {
+  title: string;
+  uri: string;
+}
+
 export interface Message {
   role: 'user' | 'model';
   text: string;
+  sources?: Source[];
 }
 
 export interface Service {

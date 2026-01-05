@@ -7,318 +7,267 @@ import { COLORS, SERVICES, PROJECTS } from './constants';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative selection:bg-[#D4AF37] selection:text-white">
       <Navbar />
 
+      {/* Floating Action Menu - D'Life Style Vertical CTAs */}
+      <div className="hidden lg:flex fixed right-0 top-1/2 -translate-y-1/2 z-[90] flex-col space-y-px">
+        <a href="#contact" className="bg-[#1B4332] text-white px-5 py-10 flex items-center justify-center font-bold uppercase text-[10px] tracking-[0.3em] shadow-xl hover:bg-[#143225] transition-all rounded-l-2xl border-b border-white/10 group">
+           <span className="sticky-cta-bar group-hover:tracking-[0.4em] transition-all">Free Quote</span>
+        </a>
+        <a href="https://wa.me/919999900000" target="_blank" rel="noreferrer" className="bg-white text-[#25D366] px-5 py-10 flex items-center justify-center font-bold uppercase text-[10px] tracking-[0.3em] shadow-xl hover:bg-gray-50 transition-all rounded-l-2xl group">
+           <span className="sticky-cta-bar group-hover:tracking-[0.4em] transition-all">WhatsApp</span>
+        </a>
+      </div>
+
       <main>
-        {/* Hero Section - H1 for SEO */}
-        <section id="home" className="relative h-[90vh] md:h-screen flex items-center overflow-hidden scroll-mt-0">
+        {/* Hero Section - High-Impact Narrative */}
+        <section id="home" className="relative h-screen flex items-center overflow-hidden bg-black">
           <div className="absolute inset-0 z-0">
             <img 
-              src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=1920" 
-              alt="Luxury House Construction and Interior Design in South India" 
-              className="w-full h-full object-cover brightness-[0.5]"
+              src="https://images.unsplash.com/photo-1600210491369-e753d80a41f3?auto=format&fit=crop&q=80&w=1920" 
+              alt="Luxury Interior Masterpiece" 
+              className="w-full h-full object-cover opacity-70 scale-105"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
           </div>
           
-          <div className="container mx-auto px-6 relative z-10 text-white">
-            <div className="max-w-4xl space-y-6">
-              <h1 className="text-5xl md:text-8xl font-serif leading-tight">
-                Top Rated <span style={{ color: COLORS.accent }}>Construction & Interior</span> Designers in India
+          <div className="container mx-auto px-6 relative z-10">
+            <div className="max-w-4xl animate-fade-in">
+              <div className="flex items-center space-x-6 mb-10">
+                <div className="w-16 h-px bg-[#D4AF37]"></div>
+                <span className="text-[#D4AF37] text-xs font-bold uppercase tracking-[0.6em]">Premium Home Solutions</span>
+              </div>
+              
+              <h1 className="text-6xl md:text-[100px] font-serif text-white leading-[0.9] mb-12">
+                Designed to <br/> 
+                <span className="italic font-light text-[#D4AF37]">Inspire</span>.
               </h1>
-              <p className="text-lg md:text-2xl text-gray-200 font-light max-w-2xl leading-relaxed">
-                India's most trusted partner for high-quality house construction and beautiful interiors. 
-                Delivering premium villas and luxury flats across Hyderabad, Bangalore, and Chennai.
+              
+              <p className="text-lg md:text-2xl text-gray-300 font-light max-w-2xl leading-relaxed mb-12">
+                India's most trusted partner for turnkey house construction and bespoke luxury interiors. Transparency. Quality. Perfection.
               </p>
-              <div className="flex flex-wrap gap-4 pt-6">
-                <a 
-                  href="#contact" 
-                  className="px-10 py-4 rounded-full text-lg font-semibold transition-all hover:scale-105 shadow-xl flex items-center gap-2"
-                  style={{ backgroundColor: COLORS.cta }}
-                >
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                  Book Free Site Visit
+              
+              <div className="flex flex-wrap gap-6 pt-4">
+                <a href="#contact" className="px-12 py-5 bg-[#D4AF37] text-white font-bold uppercase text-[11px] tracking-[0.4em] btn-premium shadow-2xl">
+                  Get Free Estimate
                 </a>
-                <a 
-                  href="https://wa.me/919999900000" 
-                  target="_blank"
-                  rel="noreferrer"
-                  className="px-10 py-4 rounded-full text-lg font-semibold border-2 border-white transition-all hover:bg-white hover:text-black flex items-center gap-2"
-                >
-                  Chat on WhatsApp
+                <a href="#projects" className="px-12 py-5 bg-white text-black font-bold uppercase text-[11px] tracking-[0.4em] hover:bg-gray-100 transition-all shadow-2xl">
+                  Recent Handovers
                 </a>
               </div>
             </div>
           </div>
-
-          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce hidden md:block">
-            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7-7-7" /></svg>
+          
+          {/* Scroll Anchor */}
+          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-4 opacity-40">
+            <span className="text-white text-[9px] uppercase tracking-[0.5em] [writing-mode:vertical-rl]">Explore</span>
+            <div className="w-px h-16 bg-gradient-to-b from-white to-transparent"></div>
           </div>
         </section>
 
-        {/* Trust Badges */}
-        <div className="bg-[#1F1F1F] py-8 border-b border-gray-800">
-          <div className="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-gray-300">
-            <div className="flex flex-col items-center gap-2">
-              <span className="text-3xl" role="img" aria-label="Construction icon">🏗️</span>
-              <p className="text-sm font-medium">A-Grade Construction Materials</p>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <span className="text-3xl" role="img" aria-label="Legal document icon">📜</span>
-              <p className="text-sm font-medium">100% Legal Transparency</p>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <span className="text-3xl" role="img" aria-label="Clock icon">🕒</span>
-              <p className="text-sm font-medium">On-Time Project Completion</p>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <span className="text-3xl" role="img" aria-label="Money icon">💰</span>
-              <p className="text-sm font-medium">Fixed Pricing Guarantee</p>
-            </div>
-          </div>
-        </div>
-
-        {/* About Section - Localized content */}
-        <section id="about" className="py-24 bg-[#FAFAFA] scroll-mt-24">
+        {/* Trust & Metrics Section */}
+        <section className="py-16 bg-white border-b border-gray-50">
           <div className="container mx-auto px-6">
-            <div className="flex flex-col lg:flex-row items-center gap-16">
-              <div className="lg:w-1/2">
-                <div className="relative">
-                  <img 
-                    src="https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=800" 
-                    alt="VEDA Construction and Interior Design Projects in Hyderabad" 
-                    className="rounded-3xl shadow-2xl relative z-10"
-                  />
-                  <div className="absolute -bottom-6 -right-6 w-full h-full border-4 border-[#C9A24D] rounded-3xl -z-0"></div>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 items-center text-center">
+              {[
+                { label: "Years Experience", value: "12+", icon: "🏆" },
+                { label: "Projects Completed", value: "850+", icon: "✨" },
+                { label: "Service Cities", value: "08", icon: "🏙️" },
+                { label: "Year Warranty", value: "10", icon: "🛡️" }
+              ].map((m, i) => (
+                <div key={i} className="space-y-3 group cursor-default">
+                  <div className="text-3xl mb-1 grayscale group-hover:grayscale-0 transition-all transform group-hover:scale-110">{m.icon}</div>
+                  <p className="text-4xl font-serif font-bold text-black">{m.value}</p>
+                  <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400">{m.label}</p>
                 </div>
-              </div>
-              <div className="lg:w-1/2 space-y-8">
-                <h2 className="text-[#C9A24D] font-bold tracking-widest uppercase text-sm">Best Construction Company in Hyderabad</h2>
-                <h3 className="text-5xl font-serif">Building Homes with <br/> Unmatched Integrity</h3>
-                <p className="text-gray-600 text-lg leading-relaxed">
-                  For over a decade, VEDA has been the trusted name for families across Telangana and Andhra Pradesh. We understand that a house is not just an investment; it is the sanctuary for your family. We focus on durability, safety, and modern aesthetics using only the best local and global materials.
-                </p>
-                <div className="grid grid-cols-2 gap-8 py-4">
-                  <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                    <p className="text-4xl font-serif text-[#1F1F1F]">12+</p>
-                    <p className="text-gray-500 text-sm">Years of Engineering Excellence</p>
-                  </div>
-                  <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                    <p className="text-4xl font-serif text-[#1F1F1F]">100%</p>
-                    <p className="text-gray-500 text-sm">Vastu Compliant Designs</p>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Services Section */}
-        <section id="services" className="py-24 bg-white scroll-mt-24">
+        {/* Core Services - Grid Overlays */}
+        <section id="services" className="py-32 bg-[#F9F9FB]">
           <div className="container mx-auto px-6">
-            <div className="text-center max-w-2xl mx-auto mb-20 space-y-4">
-              <h2 className="text-5xl font-serif">Comprehensive Home Solutions</h2>
-              <div className="w-20 h-1 mx-auto bg-[#C9A24D]"></div>
-              <p className="text-gray-500">Expert turnkey solutions for house construction and luxury interior design under one roof.</p>
+            <div className="flex flex-col lg:flex-row justify-between items-end mb-24 gap-12">
+              <div className="space-y-6 max-w-2xl">
+                <h2 className="text-xs font-bold uppercase tracking-[0.6em] text-[#D4AF37]">Expertise</h2>
+                <h3 className="text-5xl md:text-6xl font-serif">Comprehensive Solutions <br/> for Modern Living.</h3>
+              </div>
+              <p className="text-gray-500 max-w-sm font-light leading-relaxed">
+                From structural engineering to the finest interior finishes, VEDA delivers excellence at every stage.
+              </p>
             </div>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {SERVICES.map(service => (
-                <article key={service.id} className="group relative bg-[#FAFAFA] rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all p-8 flex flex-col items-center text-center border border-gray-100">
-                  <div className="text-5xl mb-6 transform group-hover:scale-110 transition-transform duration-500" aria-hidden="true">{service.icon}</div>
-                  <h3 className="text-xl font-bold mb-4">{service.title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed mb-6">{service.description}</p>
-                  <div className="mt-auto">
-                     <a href="#contact" className="px-6 py-2 rounded-full text-white text-xs font-bold uppercase tracking-widest transition-all" style={{ backgroundColor: COLORS.cta }}>
-                      Get a Quote
-                    </a>
+            <div className="grid md:grid-cols-2 gap-8">
+              {SERVICES.map((s) => (
+                <div key={s.id} className="luxury-card group relative h-[450px] overflow-hidden rounded-2xl bg-black">
+                  <img src={s.image} alt={s.title} className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 group-hover:scale-110 transition-all duration-1000" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+                  <div className="absolute bottom-12 left-12 right-12 text-white">
+                    <span className="text-[#D4AF37] font-bold text-xs uppercase tracking-[0.4em] mb-4 block">{s.icon}</span>
+                    <h4 className="text-3xl font-serif mb-4">{s.title}</h4>
+                    <p className="text-gray-300 text-sm font-light max-w-sm opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">{s.description}</p>
+                    <div className="mt-8">
+                      <a href="#contact" className="text-[10px] font-black uppercase tracking-[0.5em] border-b border-[#D4AF37] pb-1 hover:text-[#D4AF37] transition-colors">Start Project</a>
+                    </div>
                   </div>
-                </article>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Why VEDA Section */}
-        <section id="why-veda" className="py-24 bg-[#FAFAFA] scroll-mt-24">
+        {/* Process Section - High Polish Timeline */}
+        <section id="process" className="py-32 bg-white overflow-hidden">
           <div className="container mx-auto px-6">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <div className="order-2 lg:order-1 space-y-8">
-                <h2 className="text-[#C9A24D] font-bold tracking-widest uppercase text-sm">Why Families Trust VEDA</h2>
-                <h3 className="text-5xl font-serif">The VEDA Advantage for <br/> Indian Homeowners</h3>
-                <div className="space-y-6">
-                  {[
-                    { title: "No Hidden Costs", desc: "Our initial quote is what you pay. No surprises midway through the project." },
-                    { title: "Quality Material Check", desc: "Get transparency on the cement, steel, and wood brands used on your site." },
-                    { title: "Vastu Compliant Plans", desc: "Architectural designs that respect traditional Vastu principles for prosperity." },
-                    { title: "Post-Handover Warranty", desc: "Extended structural warranty and maintenance support for peace of mind." }
-                  ].map((item, idx) => (
-                    <div key={idx} className="flex space-x-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all">
-                      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#D6C4A1] flex items-center justify-center text-[#1F1F1F] font-bold text-lg" aria-hidden="true">{idx + 1}</div>
-                      <div>
-                        <h4 className="font-bold text-lg">{item.title}</h4>
-                        <p className="text-gray-500">{item.desc}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="order-1 lg:order-2">
-                <div className="relative">
-                  <img src="https://images.unsplash.com/photo-1590608897129-79da98d15969?auto=format&fit=crop&q=80&w=800" className="rounded-[3rem] shadow-2xl" alt="VEDA's commitment to quality home construction in Hyderabad" />
-                  <div className="absolute -bottom-10 -left-10 bg-white p-8 rounded-3xl shadow-2xl max-w-xs">
-                    <div className="flex items-center gap-4 mb-2">
-                      <div className="text-4xl" aria-hidden="true">⭐</div>
-                      <div>
-                        <p className="font-bold">4.9/5 Rating</p>
-                        <p className="text-xs text-gray-500">Google Business Verified</p>
-                      </div>
-                    </div>
-                    <p className="text-sm italic text-gray-600">"VEDA delivered our independent house in Hyderabad exactly as promised. Transparent and reliable!"</p>
-                  </div>
-                </div>
-              </div>
+            <div className="text-center mb-24 space-y-4">
+               <h2 className="text-xs font-bold uppercase tracking-[0.6em] text-[#D4AF37]">The VEDA Journey</h2>
+               <h3 className="text-5xl font-serif">A Process Built on Precision.</h3>
+            </div>
+            
+            <div className="grid md:grid-cols-4 gap-12 relative">
+               {[
+                 { t: "Consultation", d: "Deep dive into your needs and site analysis.", n: "01" },
+                 { t: "3D Design", d: "Bespoke renders and material selection.", n: "02" },
+                 { t: "Execution", d: "Rigorous quality control on the field.", n: "03" },
+                 { t: "Handover", d: "Deep cleaning and key handover ceremony.", n: "04" }
+               ].map((step, i) => (
+                 <div key={i} className="group relative z-10 space-y-6">
+                   <div className="w-16 h-16 rounded-full bg-[#F9F9FB] border border-gray-100 flex items-center justify-center text-xl font-bold group-hover:bg-black group-hover:text-white transition-all duration-500">
+                     {step.n}
+                   </div>
+                   <h4 className="text-xl font-bold uppercase tracking-widest">{step.t}</h4>
+                   <p className="text-gray-400 text-sm font-light leading-relaxed">{step.d}</p>
+                 </div>
+               ))}
+               <div className="hidden lg:block absolute top-8 left-0 w-full h-px bg-gray-100 -z-0"></div>
             </div>
           </div>
         </section>
 
-        {/* AI Visualizer Section */}
         <Visualizer />
 
-        {/* Projects Section */}
-        <section id="projects" className="py-24 bg-[#1F1F1F] text-white overflow-hidden scroll-mt-24">
+        {/* Portfolio - Stylized Grid */}
+        <section id="projects" className="py-32 bg-black text-white">
           <div className="container mx-auto px-6">
-            <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+            <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
               <div className="space-y-4">
-                <h2 className="text-5xl font-serif">Recent Turnkey Projects</h2>
-                <p className="text-gray-400 max-w-md">Browse our completed house construction and interior design projects across Bangalore, Hyderabad, and Pune.</p>
+                <h3 className="text-5xl md:text-7xl font-serif">Inspiration <br/> Gallery.</h3>
+                <div className="w-24 h-1 bg-[#D4AF37]"></div>
               </div>
-              <button className="px-8 py-3 rounded-full border border-[#C9A24D] text-[#C9A24D] font-bold hover:bg-[#C9A24D] hover:text-white transition-all">Full Portfolio</button>
+              <p className="text-gray-400 max-w-xs font-light text-sm">Every project we handover is a testament to our dedication to architectural beauty.</p>
             </div>
-
-            <div className="grid md:grid-cols-2 gap-12">
-              {PROJECTS.map(project => (
-                <figure key={project.id} className="group relative overflow-hidden rounded-[2.5rem] aspect-[16/10] cursor-pointer">
-                  <img src={project.image} alt={`${project.title} - Luxury project in ${project.category}`} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
-                  <figcaption className="absolute bottom-10 left-10">
-                    <span className="text-xs uppercase tracking-[0.3em] text-[#C9A24D] font-bold">{project.category}</span>
-                    <h3 className="text-3xl font-serif mt-2">{project.title}</h3>
-                  </figcaption>
-                </figure>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-16">
+              {PROJECTS.map((p, i) => (
+                <div key={p.id} className={`group cursor-pointer ${i % 2 === 1 ? 'md:mt-32' : ''}`}>
+                  <div className="overflow-hidden aspect-[16/10] rounded-3xl relative">
+                    <img src={p.image} alt={p.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                       <span className="px-8 py-3 bg-white text-black font-bold uppercase text-[10px] tracking-widest rounded-full">Explore Project</span>
+                    </div>
+                  </div>
+                  <div className="mt-8 space-y-2">
+                    <span className="text-[#D4AF37] text-[10px] font-bold uppercase tracking-[0.4em]">{p.category}</span>
+                    <h4 className="text-3xl font-serif">{p.title}</h4>
+                  </div>
+                </div>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* CTA / Contact Section */}
-        <section id="contact" className="py-24 bg-white scroll-mt-24">
-          <div className="container mx-auto px-6 text-center lg:text-left">
-            <div className="bg-[#D6C4A1] rounded-[3rem] p-8 md:p-20 relative overflow-hidden">
-              <div className="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-white/20 rounded-full blur-3xl"></div>
-              <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
-                <div className="lg:w-1/2 space-y-6">
-                  <h2 className="text-5xl font-serif text-[#1F1F1F]">Let's Design Your <br/> Future Home Together</h2>
-                  <p className="text-gray-800 text-lg leading-relaxed">
-                    Fill in the form or contact us via WhatsApp to get a free site visit and competitive cost estimate for your construction or interior project.
-                  </p>
-                  <div className="flex flex-col space-y-4">
-                    <a href="tel:+919999900000" className="flex items-center justify-center lg:justify-start space-x-4 group bg-[#1F1F1F] text-white p-4 rounded-2xl w-full lg:w-max shadow-lg transition-transform hover:scale-105">
-                      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79a15.15 15.15 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27 11.72 11.72 0 003.7.59 1 1 0 011 1V20a1 1 0 01-1 1A15 15 0 013 6a1 1 0 011-1h3.5a1 1 0 011 1 11.72 11.72 0 00.59 3.7 1 1 0 01-.27 1.11l-2.2 2.2z"/></svg>
-                      <span className="font-bold text-xl">+91 99999 00000</span>
-                    </a>
-                    <a href="https://wa.me/919999900000" className="flex items-center justify-center lg:justify-start space-x-4 group bg-[#1E7F63] text-white p-4 rounded-2xl w-full lg:w-max shadow-lg transition-transform hover:scale-105">
-                      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.414 0 .018 5.393 0 12.03c0 2.122.554 4.197 1.607 6.04L0 24l6.117-1.605a11.77 11.77 0 005.925 1.585h.005c6.635 0 12.03-5.395 12.033-12.032a11.75 11.75 0 00-3.417-8.481"/></svg>
-                      <span className="font-bold text-xl">WhatsApp Chat</span>
-                    </a>
-                  </div>
-                </div>
-                <div className="lg:w-2/5 w-full">
-                  <div className="bg-white p-8 md:p-10 rounded-3xl shadow-2xl space-y-4">
-                    <h4 className="text-2xl font-serif text-center mb-6">Quick Enquiry</h4>
-                    <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                      <input type="text" placeholder="Full Name" aria-label="Full Name" className="w-full p-4 rounded-xl border border-gray-100 bg-gray-50 focus:ring-2 focus:ring-[#C9A24D] outline-none" required />
-                      <input type="tel" placeholder="Mobile Number" aria-label="Mobile Number" className="w-full p-4 rounded-xl border border-gray-100 bg-gray-50 focus:ring-2 focus:ring-[#C9A24D] outline-none" required />
-                      <select aria-label="Select Service" className="w-full p-4 rounded-xl border border-gray-100 bg-gray-50 text-gray-500 focus:ring-2 focus:ring-[#C9A24D] outline-none">
-                        <option>Service Interested in...</option>
-                        <option>Independent House Construction</option>
-                        <option>Flat Interior Design</option>
-                        <option>Commercial Projects</option>
-                      </select>
-                      <button type="submit" className="w-full py-5 rounded-xl text-white font-bold text-lg transition-transform hover:scale-[1.02] active:scale-95 shadow-lg" style={{ backgroundColor: COLORS.cta }}>Book Consultation</button>
-                    </form>
-                    <p className="text-[10px] text-center text-gray-400 mt-4">We respect your privacy. No spam guaranteed.</p>
-                  </div>
-                </div>
-              </div>
+            
+            <div className="mt-32 text-center">
+              <button className="px-16 py-6 border border-white/20 rounded-full font-bold uppercase text-[11px] tracking-[0.5em] hover:bg-white hover:text-black transition-all">
+                View All Handovers
+              </button>
             </div>
           </div>
         </section>
 
-        {/* Local SEO Hidden Content for Crawlers */}
-        <section className="sr-only">
-          <h2>Service Regions in South India</h2>
-          <ul>
-            <li>Hyderabad, Telangana</li>
-            <li>Bangalore, Karnataka</li>
-            <li>Chennai, Tamil Nadu</li>
-            <li>Pune, Maharashtra</li>
-            <li>Vijayawada, Andhra Pradesh</li>
-          </ul>
+        {/* High-End Contact Form */}
+        <section id="contact" className="py-32 bg-white">
+          <div className="container mx-auto px-6">
+            <div className="max-w-6xl mx-auto flex flex-col lg:flex-row shadow-[0_50px_100px_-20px_rgba(0,0,0,0.1)] rounded-[2rem] overflow-hidden">
+              <div className="lg:w-1/2 p-12 md:p-24 bg-black text-white space-y-12">
+                <h3 className="text-5xl font-serif">Schedule a Free <br/> Site Inspection</h3>
+                <p className="text-gray-400 font-light leading-relaxed">
+                  Join 500+ families who chose VEDA for their dream home. Our experts will visit your site, provide a 3D walkthrough vision, and a detailed cost estimate with zero hidden fees.
+                </p>
+                <div className="space-y-6">
+                  <div className="flex items-center space-x-6">
+                    <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-xl">📞</div>
+                    <p className="text-xl font-light tracking-widest">+91 99999 00000</p>
+                  </div>
+                  <div className="flex items-center space-x-6">
+                    <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-xl">📍</div>
+                    <p className="text-sm font-light uppercase tracking-widest">Road No 36, Jubilee Hills, HYD</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="lg:w-1/2 p-12 md:p-24 bg-white">
+                <form className="space-y-10" onSubmit={e => e.preventDefault()}>
+                  <div className="space-y-2 group">
+                    <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400 group-focus-within:text-[#D4AF37] transition-colors">Full Name</label>
+                    <input type="text" className="w-full border-b border-gray-100 py-4 outline-none focus:border-[#D4AF37] transition-all font-light" placeholder="e.g. Vikram Reddy" />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Mobile Number</label>
+                    <input type="tel" className="w-full border-b border-gray-100 py-4 outline-none focus:border-[#D4AF37] transition-all font-light" placeholder="+91 XXX XXX XXXX" />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Property Location</label>
+                    <input type="text" className="w-full border-b border-gray-100 py-4 outline-none focus:border-[#D4AF37] transition-all font-light" placeholder="e.g. Gachibowli, Hyderabad" />
+                  </div>
+                  <button className="w-full py-6 bg-black text-white font-bold uppercase text-[11px] tracking-[0.5em] hover:bg-[#D4AF37] transition-all duration-500 shadow-2xl">
+                    Request Free Visit
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="py-20 bg-[#1F1F1F] text-white border-t border-gray-800">
+      {/* Modern Footer */}
+      <footer className="py-24 bg-[#0A0A0A] text-white">
         <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-12 mb-16">
-            <div className="space-y-6">
-              <span className="text-3xl font-serif font-bold tracking-widest">VEDA</span>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                The most reliable turnkey construction company for Indian families. Building quality homes in Hyderabad, Bangalore, and across South India.
-              </p>
-              <div className="flex space-x-4">
-                {['ig', 'fb', 'yt', 'li'].map(social => (
-                  <a key={social} href={`https://social.com/${social}`} aria-label={`Follow VEDA on ${social}`} className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-[#C9A24D] hover:border-transparent transition-all group">
-                    <span className="text-xs uppercase font-bold text-gray-400 group-hover:text-white">{social}</span>
-                  </a>
-                ))}
-              </div>
-            </div>
-            <nav aria-label="Footer Quick Links">
-              <h4 className="text-lg font-bold mb-6">Explore VEDA</h4>
-              <ul className="space-y-4 text-gray-400 text-sm">
-                <li><a href="#home" className="hover:text-[#C9A24D] transition-colors">Home</a></li>
-                <li><a href="#about" className="hover:text-[#C9A24D] transition-colors">About Our Expertise</a></li>
-                <li><a href="#services" className="hover:text-[#C9A24D] transition-colors">Our Best Services</a></li>
-                <li><a href="#projects" className="hover:text-[#C9A24D] transition-colors">Completed Projects</a></li>
-              </ul>
-            </nav>
-            <nav aria-label="Footer Services">
-              <h4 className="text-lg font-bold mb-6">Our Expertise</h4>
-              <ul className="space-y-4 text-gray-400 text-sm">
-                <li><a href="#services" className="hover:text-[#C9A24D] transition-colors">Villa Construction</a></li>
-                <li><a href="#services" className="hover:text-[#C9A24D] transition-colors">3BHK Interior Design</a></li>
-                <li><a href="#services" className="hover:text-[#C9A24D] transition-colors">Duplex House Plans</a></li>
-                <li><a href="#services" className="hover:text-[#C9A24D] transition-colors">Office Space Design</a></li>
-              </ul>
-            </nav>
-            <div>
-              <h4 className="text-lg font-bold mb-6">Visit Our Office</h4>
-              <address className="text-gray-400 text-sm mb-4 not-italic">
-                101, Luxury Arcade, Jubilee Hills, <br/>
-                Hyderabad, Telangana 500033
-              </address>
-              <p className="text-[#C9A24D] font-bold">Serving South India Since 2012</p>
-              <p className="mt-4 text-gray-400 text-sm">Contact: +91 99999 00000</p>
-            </div>
+          <div className="grid md:grid-cols-4 gap-16 mb-24">
+             <div className="space-y-8">
+               <span className="text-3xl font-serif font-black tracking-[0.4em]">VEDA</span>
+               <p className="text-gray-500 text-sm font-light leading-relaxed">Crafting architectural legacies and luxury living spaces since 2012.</p>
+             </div>
+             <div className="space-y-6">
+               <h5 className="text-[10px] font-black uppercase tracking-[0.4em] text-[#D4AF37]">Design Studios</h5>
+               <ul className="space-y-4 text-sm text-gray-400 font-light">
+                 <li>Hyderabad - Jubilee Hills</li>
+                 <li>Bangalore - Whitefield</li>
+                 <li>Chennai - Adyar</li>
+                 <li>Vijayawada - Benz Circle</li>
+               </ul>
+             </div>
+             <div className="space-y-6">
+               <h5 className="text-[10px] font-black uppercase tracking-[0.4em] text-[#D4AF37]">Company</h5>
+               <ul className="space-y-4 text-sm text-gray-400 font-light">
+                 <li className="hover:text-white transition-colors cursor-pointer">About Us</li>
+                 <li className="hover:text-white transition-colors cursor-pointer">Careers</li>
+                 <li className="hover:text-white transition-colors cursor-pointer">Project Map</li>
+                 <li className="hover:text-white transition-colors cursor-pointer">Privacy Policy</li>
+               </ul>
+             </div>
+             <div className="space-y-6">
+               <h5 className="text-[10px] font-black uppercase tracking-[0.4em] text-[#D4AF37]">Connect</h5>
+               <ul className="space-y-4 text-sm text-gray-400 font-light">
+                 <li className="hover:text-white transition-colors cursor-pointer">Instagram</li>
+                 <li className="hover:text-white transition-colors cursor-pointer">LinkedIn</li>
+                 <li className="hover:text-white transition-colors cursor-pointer">Facebook</li>
+                 <li className="hover:text-white transition-colors cursor-pointer">YouTube</li>
+               </ul>
+             </div>
           </div>
-          <div className="pt-8 border-t border-gray-800 text-center text-gray-500 text-xs flex flex-col md:flex-row justify-between items-center gap-4">
-            <p>© {new Date().getFullYear()} VEDA – Best Home Construction & Luxury Interiors. All rights reserved.</p>
-            <div className="flex gap-6">
-              <a href="#" className="hover:text-white">Privacy Policy</a>
-              <a href="#" className="hover:text-white">Terms of Service</a>
-            </div>
+          <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+             <p className="text-[10px] uppercase tracking-[0.4em] text-gray-600">© {new Date().getFullYear()} VEDA Architectural Studio. All Rights Reserved.</p>
+             <p className="text-[10px] uppercase tracking-[0.4em] text-gray-600">Site By LuxuryDigital</p>
           </div>
         </div>
       </footer>

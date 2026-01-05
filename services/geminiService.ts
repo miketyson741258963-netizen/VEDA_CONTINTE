@@ -1,11 +1,12 @@
 
-import { GoogleGenAI, GenerateContentResponse } from "@google/genai";
+import { GoogleGenAI } from "@google/genai";
+import { Message, Source } from "../types";
 
 const getAIClient = () => {
   return new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
 };
 
-export const chatWithVeda = async (message: string, history: {role: 'user' | 'model', text: string}[]) => {
+export const chatWithVeda = async (message: string, history: Message[]) => {
   const ai = getAIClient();
   const model = 'gemini-3-flash-preview';
   
@@ -29,6 +30,7 @@ export const chatWithVeda = async (message: string, history: {role: 'user' | 'mo
     Crucial Instructions:
     - Always emphasize quality and trust.
     - If asked about prices, provide approximate ranges and suggest a free site visit for an accurate quote.
+    - Use Google Search to provide accurate, up-to-date information regarding construction costs, market trends, or local city specific information in India.
     - Encourage users to check our "Projects" section to see real Indian homes we've built.
     - Offer to redirect to WhatsApp (+91-9999900000) for instant sharing of catalogs.
   `;
@@ -38,19 +40,43 @@ export const chatWithVeda = async (message: string, history: {role: 'user' | 'mo
       model,
       contents: [
         { role: 'user', parts: [{ text: systemInstruction }] },
-        ...history.map(h => ({ role: h.role, parts: [{ text: h.text }] })),
+        ...history.map(h => ({ 
+          role: h.role, 
+          parts: [{ text: h.text }] 
+        })),
         { role: 'user', parts: [{ text: message }] }
       ],
       config: {
+        tools: [{ googleSearch: {} }],
         temperature: 0.6,
         topP: 0.8,
       }
     });
 
-    return response.text || "I apologize, Sir/Madam. I am having a bit of trouble. Could you please rephrase your question?";
+    const text = response.text || "I apologize, Sir/Madam. I am having a bit of trouble. Could you please rephrase your question?";
+    
+    // Extract grounding sources
+    const sources: Source[] = [];
+    const groundingChunks = response.candidates?.[0]?.groundingMetadata?.groundingChunks;
+    
+    if (groundingChunks) {
+      groundingChunks.forEach((chunk: any) => {
+        if (chunk.web) {
+          sources.push({
+            title: chunk.web.title || chunk.web.uri,
+            uri: chunk.web.uri
+          });
+        }
+      });
+    }
+
+    return { text, sources: sources.length > 0 ? sources : undefined };
   } catch (error) {
     console.error("Gemini Chat Error:", error);
-    return "I am sorry for the inconvenience. Please contact our team directly at +91 99999 00000.";
+    return { 
+      text: "I am sorry for the inconvenience. Please contact our team directly at +91 99999 00000.",
+      sources: undefined 
+    };
   }
 };
 
